@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(82, 66, 42);;
+}
+.game-board{
+    width: 100%;
+    height: 500px;
+    border-bottom: 15px solid rgb(35, 160, 35);
+    margin: 0 auto;
+    position: relative;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+    overflow: hidden; /* quando algo sair da limitação do quadro ele some */
+}
+
+.pipe{
+    position: absolute;
+    bottom: -30px;
+    width: 80px;
+    animation: pipe-animation 2s infinite linear;
+    /* right: deixa o tubo na direita da tela */
+    /* linear faz com que mantenha a mesma velocidade */
+}
+
+.mario{
+    width: 150px;
+    position: absolute;
+    bottom: 0;    
+    
+}
+
+.jump{
+    animation: jump 500ms ease-out;
+}
+
+.clouds{
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+}
+@keyframes jump{
+    /* inicio = 0 meio = 180px fim = 0 */
+
+    0%{
+        bottom: 0;
+    }
+
+    40%{
+        bottom: 190px;
+    }
+
+    50%{
+        bottom: 190px;
+    }
+
+    60%{
+        bottom: 190px;
+    }
+
+    100%{
+        bottom: 0;
+    }
+}
+
+@keyframes pipe-animation{
+    from{
+        right: -80px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes clouds-animation{
+    from{
+        right: -550px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(35, 160, 35);
+    color: white;
+    text-align: center;
+}
